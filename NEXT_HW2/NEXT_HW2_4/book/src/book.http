@@ -1,0 +1,30 @@
+@server = http://localhost:3000
+
+# 책 목록 조회
+GET {{server}}/books
+
+### 책 생성
+POST {{server}}/books
+Content-Type: application/json
+
+{
+    "title": "사고의 본질",              
+    "author": "더글러스 호프스태터",               
+    "isAvailable": true           
+}
+
+### 특정 책 조회
+GET {{server}}/books/{bookId}
+
+### 책 삭제
+DELETE {{server}}/books/{bookId}
+
+### 책 정보 수정
+PUT {{server}}/books/{bookId}
+Content-Type: application/json
+
+{
+    "title": "타이틀 수정",          
+    "author": "next.kim",            
+    "isAvailable": false            
+}
